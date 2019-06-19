@@ -1,28 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import React, { Component } from 'react';
-
-function One() {
-  <div>
-     <h2> so 1 tap 1 </h2>
-     <h3> so 1 tap 2 </h3>
-     </div>
-}
+import TopMenu from './Component/TopMenu/TopMenu.js';
+import Header from './Component/Header/Header.js';
+import Content from './Component/Content/Content.js';
+import Footer from './Component/Footer/Footer';
 
 class App extends Component {
-  render() {
+
+  render () {
     return (
-      <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <One/>
-      </header>
-    </div>
+      <div className="_013">
+        <TopMenu/>
+        <Header/>
+        <Content tieude="cach su dung props bang props" vitri1="order-lg-12" vitri2="order-lg-1" trichdan="day la trich dan so 1"/>
+        <Content tieude="tin tuc so 2" anh="img/02.jpg" trichdan="day la trich dan so 2"/>
+        <Content tieude="tin tuc so 3" vitri1="order-lg-2" anh="img/03.jpg" trichdan="day la trich dan so 3"/>
+        <Footer/>
+      </div>
     );
   }
 }
-
 
 export default App;
