@@ -13,10 +13,23 @@ class App extends Component {
       <div className="_013">
         <TopMenu/>
         <Header/>
-        <Content tieude="cach su dung props bang props" vitri1="order-lg-12" vitri2="order-lg-1" trichdan="day la trich dan so 1"/>
+        <div className="container">
+        <div className="row pt-5">
+        <Content tieude="cach su dung props bang props" anh = "img/01.jpg" trichdan="day la trich dan so 1"/>
         <Content tieude="tin tuc so 2" anh="img/02.jpg" trichdan="day la trich dan so 2"/>
         <Content tieude="tin tuc so 3" vitri1="order-lg-2" anh="img/03.jpg" trichdan="day la trich dan so 3"/>
+        
+        <Content tieude="cach su dung props bang props" anh = "img/01.jpg" trichdan="day la trich dan so 1"/>
+        <Content tieude="tin tuc so 2" anh="img/02.jpg" trichdan="day la trich dan so 2"/>
+        <Content tieude="tin tuc so 3" vitri1="order-lg-2" anh="img/03.jpg" trichdan="day la trich dan so 3"/>
+
+        <Content tieude="cach su dung props bang props" anh = "img/01.jpg" trichdan="day la trich dan so 1"/>
+        <Content tieude="tin tuc so 2" anh="img/02.jpg" trichdan="day la trich dan so 2"/>
+        <Content tieude="tin tuc so 3" vitri1="order-lg-2" anh="img/03.jpg" trichdan="day la trich dan so 3"/>
+        </div>
+        </div>
         <Footer/>
+
       </div>
     );
   }
