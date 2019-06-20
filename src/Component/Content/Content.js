@@ -51,6 +51,8 @@ class Content extends Component {
 
     saveClick  = () => {
         this.setState({trangThai:0});
+        
+        
     }
     
     render() {
