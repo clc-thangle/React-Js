@@ -41,7 +41,7 @@ class NewItem extends Component {
             <div className="col-4">
                 <div className="card-deck">
                     <div className="card">
-                        <a href={"/tin-tuc/" + this.chuyenDoiURL(this.props.tieuDe) + "-" + this.props.tinId + ".html"}><img src={this.props.anh} alt="for react router" className="img-fluid" /></a>
+                        <a href={"/tin-tuc/" + this.chuyenDoiURL(this.props.tieuDe) + "." + this.props.tinId + ".html"}><img src={this.props.anh} alt="for react router" className="img-fluid" /></a>
                         <h4 className="card-title">{this.props.tieuDe}</h4>
                         <p>{this.props.trichDan}</p>
 
