@@ -20,7 +20,7 @@ class Nav extends Component {
                                     <NavLink to="/tin">News</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/tin-chi-tiet">Details</NavLink>
+                                    <NavLink to="/tin-tuc/:slug.:id.html">Details</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/lien-he">Contact</NavLink>
