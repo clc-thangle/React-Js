@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+//ádadasdasd
 class NewItem extends Component {
     constructor(props) {
         super(props);
@@ -48,6 +48,7 @@ class NewItem extends Component {
                     </div>
                 </div>
                 <hr />
+                <hr/>
             </div>
         );
     }
