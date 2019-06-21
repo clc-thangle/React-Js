@@ -6,17 +6,18 @@ import Footer from './Footer';
 import News from './News';
 import Details from './Details';
 import Contact from './Contact';
-
+import DieuHuongURL from '../router/DieuHuongURL';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <Nav/>
-      {/* <Home/>
-      <News/>
-      <Details/> */}
-      <Contact/>
-      <Footer/>
-    </div>
+    <Router>
+<div className="App">
+        <Nav />
+        <DieuHuongURL />
+        <Footer />
+      </div>
+    </Router>
+      
   );
 }
 

@@ -10,7 +10,7 @@ class Contact extends Component {
                             <div className="row h-100">
                                 <div className="col-lg-6 my-auto">
                                     <div className="header-content mx-auto" style={{ textAlign: 'center' }}>
-                                        <h1 className="mb-5">News Page</h1>
+                                        <h1 className="mb-5">Lien he voi chung toi</h1>
                                         <a href="#download" className="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
                                     </div>
                                 </div>
@@ -20,7 +20,7 @@ class Contact extends Component {
                                             <div className="device">
                                                 <div className="screen">
                                                     {/* Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! */}
-                                                    <img src="https://avatars1.githubusercontent.com/u/46485840?s=400&amp;u=bd2979d378b3f679aaa51fb30d1a7fa360835ec5&amp;v=4" class="img-fluid"></img>
+                                                    <img src="https://avatars1.githubusercontent.com/u/46485840?s=400&amp;u=bd2979d378b3f679aaa51fb30d1a7fa360835ec5&amp;v=4" className="img-fluid"></img>
                                                 </div>
                                                 <div className="button">
                                                     {/* You can hook the "home button" to some JavaScript events or just remove it */}
