@@ -47,7 +47,7 @@ class Home extends Component {
               </div>
             </div>
           </section>
-          <footer>
+          {/* <footer>
             <div className="container">
               <p>© Your Website 2019. All Rights Reserved.</p>
               <ul className="list-inline">
@@ -62,7 +62,7 @@ class Home extends Component {
                 </li>
               </ul>
             </div>
-          </footer>
+          </footer> */}
           {/* Optional JavaScript */}
           {/* jQuery first, then Popper.js, then Bootstrap JS */}
         </div>

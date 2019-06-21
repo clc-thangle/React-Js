@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewItem from './NewItem';
 
 class News extends Component {
     render() {
@@ -41,7 +42,7 @@ class News extends Component {
                                 <div className="row h-100">
                                     <div className="col-lg-12 my-auto">
                                         <div className="header-content mx-auto">
-                                            <h1>TRANG DANH SACH TIN </h1>
+                                            <h1>Trang danh sach tin</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -50,132 +51,9 @@ class News extends Component {
                         {/* begin tintuc */}
                         <div className="container">
                             <div className="row mt-3">
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <a href="chitiet.html"><img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" /></a>
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div className="col-4">
-                                    <div className="card-deck">
-                                        <div className="card">
-                                            <img src="http://placehold.it/800x400" alt="for react router" className="img-fluid" />
-                                            <blockquote className="blockquote">
-                                                <h4 className="card-title"><a href="chitiet.html">tin tuc so 2</a></h4>
-                                                <p>lorem ipsum dolor sit...</p>
-                                                <footer className="card-deck-blockquote">Footer<cite title="Source title">Source title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </div>
+                                <NewItem anh="https://avatars1.githubusercontent.com/u/46485840?s=400&u=bd2979d378b3f679aaa51fb30d1a7fa360835ec5&v=4" tieuDe="nho dep trai" trichDan="ae dai hoc spdn da~ cong nhan nho dep trai"/>
+                                <NewItem anh="https://avatars1.githubusercontent.com/u/46485840?s=400&u=bd2979d378b3f679aaa51fb30d1a7fa360835ec5&v=4" tieuDe="nho dep trai" trichDan="ae dai hoc spdn da~ cong nhan nho dep trai"/>
+                                <NewItem anh="https://avatars1.githubusercontent.com/u/46485840?s=400&u=bd2979d378b3f679aaa51fb30d1a7fa360835ec5&v=4" tieuDe="nho dep trai" trichDan="ae dai hoc spdn da~ cong nhan nho dep trai"/>
                             </div>
                         </div>
                     </div>
