@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-//ádadasdasd
-class NewItem extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+class NewRelated extends Component {
     chuyenDoiURL = (str) => {
         function to_slug(str) {
             // Chuyển hết sang chữ thường
@@ -39,20 +34,16 @@ class NewItem extends Component {
 
     render() {
         return (
-            <div className="col-4">
-                <div className="card-deck">
-                    <div className="card">
-                        <Link to={"/tin-tuc/" + this.chuyenDoiURL(this.props.tieuDe) + "." + this.props.tinId + ".html"}><img src={this.props.anh} alt="for react router" className="img-fluid" /></Link>
+            <div className="card">
+                      <Link to={"/tin-tuc/" + this.chuyenDoiURL(this.props.tieuDe) + "." + this.props.tinId + ".html"}>
+                      <img className="card-img-top" src={this.props.anh} alt="react router demo" /></Link>
+                      <div className="card-body">
                         <h4 className="card-title">{this.props.tieuDe}</h4>
-                        <p>{this.props.trichDan}</p>
-
+                        <p className="card-text">{this.props.trichDan}</p>
+                      </div>
                     </div>
-                </div>
-                <hr />
-                <hr/>
-            </div>
         );
     }
 }
 
-export default NewItem;
+export default NewRelated;

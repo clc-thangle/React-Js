@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dl from './dulieu.json'
+import NewRelated from './NewRelated.js';
 class Details extends Component {
   render() {
 
@@ -44,7 +45,7 @@ class Details extends Component {
               dl.map((value, key) => {
                 if (value.id == this.props.match.params.id) {
                   return (
-                    <div className="jumbotron jumbotron-fluid">
+                    <div className="jumbotron jumbotron-fluid" key={key}>
                       <div className="container">
                         <img src={value.anh} className="img-fluid" />
                         <h3 className="lead text-center">{value.tieuDe}</h3>
@@ -63,42 +64,29 @@ class Details extends Component {
               <div className="row">
                 <div className="col-12">
                   <div className="card-deck">
-                    <div className="card">
-                      <a href="chitiet.html"><img className="card-img-top" src="http://placehold.it/500x300/" alt /></a>
-                      <div className="card-body">
-                        <h4 className="card-title">Title</h4>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae in
-                          magnam ex totam doloribus suscipit ratione, ipsam ut quam consequuntur earum numquam
-                quasi obcaecati deserunt! Sint dicta fugit eos et!</p>
-                      </div>
-                    </div>
-                    <div className="card">
-                      <a href="chitiet.html"><img className="card-img-top" src="http://placehold.it/500x300/" alt /></a>
-                      <div className="card-body">
-                        <h4 className="card-title">Title</h4>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae in
-                          magnam ex totam doloribus suscipit ratione, ipsam ut quam consequuntur earum numquam
-                quasi obcaecati deserunt! Sint dicta fugit eos et!</p>
-                      </div>
-                    </div>
-                    <div className="card">
-                      <a href="chitiet.html"><img className="card-img-top" src="http://placehold.it/500x300/" alt /></a>
-                      <div className="card-body">
-                        <h4 className="card-title">Title</h4>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae in
-                          magnam ex totam doloribus suscipit ratione, ipsam ut quam consequuntur earum numquam
-                quasi obcaecati deserunt! Sint dicta fugit eos et!</p>
-                      </div>
-                    </div>
-                    <div className="card">
-                      <a href="chitiet.html"><img className="card-img-top" src="http://placehold.it/500x300/" alt /></a>
-                      <div className="card-body">
-                        <h4 className="card-title">Title</h4>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae in
-                          magnam ex totam doloribus suscipit ratione, ipsam ut quam consequuntur earum numquam
-                quasi obcaecati deserunt! Sint dicta fugit eos et!</p>
-                      </div>
-                    </div>
+                    {
+                      
+                      dl.map((value,key) => {
+                        if(value.id != this.props.match.params.id)
+                        {
+                          if(key <= 3)
+                          return (
+                            
+                            
+                              <NewRelated key={key}
+                              tinId={value.id}
+                              anh={value.anh}
+                              tieuDe={value.tieuDe}
+                              trichDan={value.trichDan}
+                              />
+                          )
+                        }
+                        
+                        
+                      })
+                      
+                    }
+                    
                   </div>
                 </div>
               </div>
