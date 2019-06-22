@@ -5,6 +5,20 @@ import TableData from './TableData';
 import AddUser from './AddUser';
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            hienThiForm : false
+        }
+    }
+
+    doiTrangThai  = () => {
+        this.setState({
+            hienThiForm: !this.state.hienThiForm
+        });
+    }
+
     render() {
         return (
             <div>
@@ -12,9 +26,9 @@ class App extends Component {
                 <div className="searchForm">
                     <div className="container">
                         <div className="row">
-                            <Search/>
+                            <Search ketNoi={() => this.doiTrangThai()} hienThiForm = {this.state.hienThiForm} />
                             <TableData/>
-                            <AddUser/>
+                            <AddUser hienThiForm={this.state.hienThiForm}/>
                         </div>
                     </div>
                 </div>
