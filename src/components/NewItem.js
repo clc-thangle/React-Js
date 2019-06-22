@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 //ádadasdasd
 class NewItem extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     chuyenDoiURL = (str) => {
         function to_slug(str) {
             // Chuyển hết sang chữ thường

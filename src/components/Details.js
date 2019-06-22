@@ -43,7 +43,7 @@ class Details extends Component {
           <div>
             {
               dl.map((value, key) => {
-                if (value.id == this.props.match.params.id) {
+                if (value.id === parseInt(this.props.match.params.id,20)) {
                   return (
                     <div className="jumbotron jumbotron-fluid" key={key}>
                       <div className="container">
@@ -55,7 +55,9 @@ class Details extends Component {
                     </div>
                   )
                 }
-
+                else {
+                  return;
+                }
 
               })
             }
@@ -67,7 +69,7 @@ class Details extends Component {
                     {
                       
                       dl.map((value,key) => {
-                        if(value.id != this.props.match.params.id)
+                        if(value.id !== parseInt(this.props.match.params.id,20))
                         {
                           if(key <= 3)
                           return (
@@ -80,6 +82,9 @@ class Details extends Component {
                               trichDan={value.trichDan}
                               />
                           )
+                        }
+                        else {
+                          return ;
                         }
                         
                         
