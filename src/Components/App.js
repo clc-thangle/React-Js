@@ -13,7 +13,8 @@ class App extends Component {
         super(props);
         this.state = {
             hienThiForm : false,
-            data : DataUser
+            data : DataUser,
+            searchText : ""
         }
     }
 
@@ -24,12 +25,22 @@ class App extends Component {
     }
 
     getTextSearch  = (dl) => {
-        console.log('du lieu bo nhan duoc la ' + dl);
-        
-        
+        this.setState({
+            searchText:dl
+        });
     }
 
-    render() {        
+    render() {
+        
+        var ketQua = [];
+        this.state.data.forEach((item) => {
+            if(item.name.indexOf(this.state.searchText) !== -1)
+            {
+                ketQua.push(item);
+            }
+        })
+        console.log(ketQua);
+        
         return (
             <div>
                 <Header />
@@ -39,7 +50,7 @@ class App extends Component {
                             <Search
                             checkConnectProps={(dl) => {this.getTextSearch(dl)}}
                              ketNoi={() => this.doiTrangThai()} hienThiForm = {this.state.hienThiForm} />
-                            <TableData dataUserProps={this.state.data}/>
+                            <TableData dataUserProps={ketQua}/>
                             <AddUser hienThiForm={this.state.hienThiForm}/>
                         </div>
                     </div>

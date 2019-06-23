@@ -15,6 +15,7 @@ class Search extends Component {
     this.setState({
       tempValue:event.target.value 
     });
+    this.props.checkConnectProps(this.state.tempValue)
   } 
 
   hienThiNut  = () => {
