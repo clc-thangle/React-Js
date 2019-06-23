@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class TableDataRow extends Component {
 
     permissionShow  = () => {
-        if(this.props.permission ===1 ){return "Admin";}
-        else if (this.props.permission2 === 2){return "Moderator";}
+        if(this.props.permission == 1 ){return "Admin";}
+        else if (this.props.permission == 2){return "Moderator";}
         else {return "Normal User";}
     }
 
