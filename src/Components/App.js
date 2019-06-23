@@ -6,6 +6,7 @@ import AddUser from './AddUser';
 
 import DataUser from './Data.json';
 
+const uuidv1 = require('uuid/v1');
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
     getNewUserDate = (name,tel,Permission) => {
 
         var item = {};
-        item.id="";
+        item.id= uuidv1();
         item.name= name;
         item.tel=tel;
         item.Permission=Permission

@@ -39,6 +39,7 @@ class AddUser extends Component {
         {
             return (
                 <div className="col">
+                <form>
                 <div className="card border-primary mb-3 mt-2" style={{maxWidth: '18rem'}}>
                     <div className="card-header">Thêm mới user vào hệ thống</div>
                     <div className="card-body">
@@ -57,10 +58,11 @@ class AddUser extends Component {
                             </select>
                         </div>
                         <div className="form-group">
-                            <div className="btn btn-block btn-primary" onClick={(name,tel,Permission) => this.props.add(this.state.name,this.state.tel,this.state.Permission)}>Thêm mới</div>
+                            <input type ="reset" className="btn btn-block btn-primary" onClick={(name,tel,Permission) => this.props.add(this.state.name,this.state.tel,this.state.Permission)} value = "Thêm mới"/>
                         </div>
                     </div>
                 </div>
+                </form>
                 </div>
             )
         }
