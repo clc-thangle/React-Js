@@ -6,6 +6,7 @@ class AddUser extends Component {
         if(this.props.hienThiForm === true)
         {
             return (
+                <div className="col">
                 <div className="card border-primary mb-3 mt-2" style={{maxWidth: '18rem'}}>
                     <div className="card-header">Thêm mới user vào hệ thống</div>
                     <div className="card-body">
@@ -28,6 +29,7 @@ class AddUser extends Component {
                         </div>
                     </div>
                 </div>
+                </div>
             )
         }
     }
@@ -35,11 +37,11 @@ class AddUser extends Component {
     render() {
         
         return (
-            <div className="col-3">
+            
             <div>
                     {this.kiemTraTrangThai()}
             </div>
-          </div>
+          
           
         );
     }
