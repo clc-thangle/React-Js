@@ -23,8 +23,9 @@ class App extends Component {
         });
     }
 
-    checkConnect  = () => {
-        alert('ket noi thanh cong')
+    getTextSearch  = (dl) => {
+        console.log('du lieu bo nhan duoc la ' + dl);
+        
         
     }
 
@@ -36,7 +37,7 @@ class App extends Component {
                     <div className="container">
                         <div className="row">
                             <Search
-                            checkConnect={() => {this.checkConnect()}}
+                            checkConnectProps={(dl) => {this.getTextSearch(dl)}}
                              ketNoi={() => this.doiTrangThai()} hienThiForm = {this.state.hienThiForm} />
                             <TableData dataUserProps={this.state.data}/>
                             <AddUser hienThiForm={this.state.hienThiForm}/>
