@@ -21,6 +21,13 @@ class App extends Component {
         }
     }
 
+    deleteUser = (idUser) => {
+       var tempData = this.state.data.filter(item => item.id !== idUser)
+       this.setState({
+           data:tempData
+       });
+    }
+
     changeEditUserStatus  = () => {
         this.setState({
             editUserStatus : !this.state.editUserStatus
@@ -57,9 +64,6 @@ class App extends Component {
         this.setState({
             data:items
         });
-        
-        console.log(this.state.data);
-        console.log('ket noi ok');
     }
 
     doiTrangThai  = () => {
@@ -99,6 +103,7 @@ class App extends Component {
                              editUserStatus={this.state.editUserStatus}
                              changeEditUserStatus = {() => this.changeEditUserStatus()} />
                             <TableData
+                            deleteUser = {(idUser) => this.deleteUser(idUser)}
                             changeEditUserStatus = {() => this.changeEditUserStatus()}
                              dataUserProps={ketQua} 
                             editFun={(user)=> this.editUser(user)}/>
