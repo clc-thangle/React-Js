@@ -14,18 +14,33 @@ class App extends Component {
         super(props);
         this.state = {
             hienThiForm : false,
-            data : DataUser,
+            data : [],
             searchText : '',
             editUserStatus : false   ,
             userEditObject : {}
         }
     }
 
+    
+    componentWillMount() {
+        //kiem  tra xem co localStorage chay chua
+        if (localStorage.getItem('userData') == null){
+          localStorage.setItem('userData',JSON.stringify(DataUser));
+        }else{
+          var temp = JSON.parse(localStorage.getItem('userData'));
+          this.setState({
+            data:temp
+          });
+        }   
+      }
+    
+
     deleteUser = (idUser) => {
        var tempData = this.state.data.filter(item => item.id !== idUser)
        this.setState({
            data:tempData
        });
+       localStorage.setItem('userData',JSON.stringify(tempData));
     }
 
     changeEditUserStatus  = () => {
@@ -43,6 +58,7 @@ class App extends Component {
                 value.Permission=info.Permission;
             }
         })
+        localStorage.setItem('userData',JSON.stringify(this.state.data));
     }
 
     editUser  = (user) => {
@@ -64,6 +80,7 @@ class App extends Component {
         this.setState({
             data:items
         });
+        localStorage.setItem('userData',JSON.stringify(items));
     }
 
     doiTrangThai  = () => {
@@ -79,7 +96,7 @@ class App extends Component {
     }
 
     render() {
-        
+    //    localStorage.setItem('userData',JSON.stringify(DataUser));
         var ketQua = [];
         this.state.data.forEach((item) => {
             if(item.name.indexOf(this.state.searchText) !== -1)
