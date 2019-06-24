@@ -15,12 +15,23 @@ class App extends Component {
         this.state = {
             hienThiForm : false,
             data : DataUser,
-            searchText : ""
+            searchText : '',
+            editUserStatus : false   ,
+            userEditObject : {}
         }
+    }
+
+    changeEditUserStatus  = () => {
+        this.setState({
+            editUserStatus : !this.state.editUserStatus
+        });
     }
 
     editUser  = (user) => {
         console.log('ket noi ok ');
+        this.setState({
+            userEditObject:user
+        });
         console.log(user);
            
     }
@@ -72,9 +83,14 @@ class App extends Component {
                     <div className="container">
                         <div className="row">
                             <Search
+                            userEditObject={this.state.userEditObject}
                             checkConnectProps={(dl) => {this.getTextSearch(dl)}}
-                             ketNoi={() => this.doiTrangThai()} hienThiForm = {this.state.hienThiForm} />
-                            <TableData dataUserProps={ketQua} 
+                             ketNoi={() => this.doiTrangThai()} hienThiForm = {this.state.hienThiForm}
+                             editUserStatus={this.state.editUserStatus}
+                             changeEditUserStatus = {() => this.changeEditUserStatus()} />
+                            <TableData
+                            changeEditUserStatus = {() => this.changeEditUserStatus()}
+                             dataUserProps={ketQua} 
                             editFun={(user)=> this.editUser(user)}/>
                             <AddUser add={(name,tel,Permission) => this.getNewUserDate(name,tel,Permission  )} hienThiForm={this.state.hienThiForm}/>
                         </div>

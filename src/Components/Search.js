@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EditUser from './EditUser';
 
 class Search extends Component {
 
@@ -8,33 +9,40 @@ class Search extends Component {
       tempValue: ''
     }
   }
-  
 
-  isChange  = (event) => {
+  isShowEditForm  = () => {
+    if(this.props.editUserStatus === true)
+    {
+      return <EditUser 
+      userEditObject = {this.props.userEditObject}
+      changeEditUserStatus={() => this.props.changeEditUserStatus()}/>
+    }
+  }
+
+  isChange = (event) => {
     console.log(event.target.value);
     this.setState({
-      tempValue:event.target.value 
+      tempValue: event.target.value
     });
     this.props.checkConnectProps(this.state.tempValue)
-  } 
+  }
 
-  hienThiNut  = () => {
-    if(this.props.hienThiForm === true)
-    {
-      return <div className="btn btn-block btn-outline-secondary" onClick={() =>this.props.ketNoi()}> Đóng lại </div>
+  hienThiNut = () => {
+    if (this.props.hienThiForm === true) {
+      return <div className="btn btn-block btn-outline-secondary" onClick={() => this.props.ketNoi()}> Đóng lại </div>
     }
-    else
-    {
-      return <div className="btn btn-block btn-outline-info" onClick={() =>this.props.ketNoi()}> Thêm mới </div>
+    else {
+      return <div className="btn btn-block btn-outline-info" onClick={() => this.props.ketNoi()}> Thêm mới </div>
     }
   }
 
   render() {
     return (
       <div className="col-12">
+        {this.isShowEditForm()}
         <div className="form-group">
           <div className="btn-group">
-            <input type="text" className="form-control" onChange={(event) => {this.isChange(event)}} placeholder="Nhập từ khóa" style={{ width: '610px' }} />
+            <input type="text" className="form-control" onChange={(event) => { this.isChange(event) }} placeholder="Nhập từ khóa" style={{ width: '610px' }} />
             <div className="btn btn-info" onClick={(dl) => this.props.checkConnectProps(this.state.tempValue)}> Tìm </div>
           </div>
           <div className="btn-group1">
