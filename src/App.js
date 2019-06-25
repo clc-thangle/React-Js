@@ -8,21 +8,26 @@ class App extends Component {
   
   render() {
 
-    // var a1 = [3,5,6,7];
-    // var a2 = [...a1];
-    // console.log(a1);
-    // a2[0]=100;
-    // console.log(a2);
-    
-    var b1 = {
-      num : [34,35,36],
-      status : true
+    var redux = require('redux');
+    var oldState = {
+      num:["man hinh","chuot","ban phim"],
+      editStatus: true
     }
-    var b2 = {...b1,status:false};
-    console.log(b2);
-    var b3 = {...b1,num:[...b1.num,100]};
-
-    console.log(b3);
+    var reducer1 = (state=oldState, action) => {
+      switch (action.type)
+      {
+        case "CHANGE_EDIT_STATUS":
+          return {...state,editStatus:!state.editStatus}
+          break;
+        default:
+          break;
+      }
+      return state;
+    }
+    var store1 = redux.createStore(reducer1); 
+    store1.dispatch({type:"CHANGE_EDIT_STATUS"})
+    console.log(store1.getState());
+    
     
     
     return (
