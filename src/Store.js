@@ -1,3 +1,6 @@
+import numReducer from './reducer/numReducer';
+import editStatusReducer from './reducer/editStatusReducer';
+
 var redux = require('redux');
     var oldState = {
       num:["man hinh","chuot","ban phim"],
@@ -20,7 +23,14 @@ var redux = require('redux');
       }
       
     }
-    var store1 = redux.createStore(reducer1); 
+
+
+    const allReducer = redux.combineReducers({
+      num:numReducer,
+      editStatus:editStatusReducer
+    })
+
+    var store1 = redux.createStore(allReducer); 
 
     store1.subscribe(() => {
       console.log(JSON.stringify(store1.getState()));
