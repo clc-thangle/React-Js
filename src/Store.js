@@ -38,4 +38,4 @@ var redux = require('redux');
       index:0
     })
 
-export default store1;
+export default store1;  
