@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';  
 class News extends Component {
 
-    userEditStatusInStore  = () => {
-        var dispatch = this.props.dispatch;
-        dispatch({type:'CHANGE_EDIT_STATUS'})
-    }
+    // userEditStatusInStore  = () => {
+    //     var dispatch = this.props.dispatch;
+    //     dispatch({type:'CHANGE_EDIT_STATUS'})
+    // }
 
     render() {
         return (
@@ -21,5 +21,13 @@ const mapStateToProps = (state, ownProps) => {
         editStatus: state.editStatus
     }
 }
-export default connect(mapStateToProps)(News)
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        userEditStatusInStore: () => {
+            dispatch({type:'CHANGE_EDIT_STATUS'})
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(News)
        
