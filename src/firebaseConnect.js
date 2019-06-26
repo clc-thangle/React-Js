@@ -13,8 +13,16 @@ var firebaseConfig = {
  
   export const firebaseConnect =  firebase.initializeApp(firebaseConfig);
 
-  var data = firebase.database().ref('dataForNote');
-  data.once('value').then(function(snapshot){
-    console.log(snapshot.val());
-    
+  var data = firebase.database().ref('dataForNote/node2');
+
+  //sua du lieu
+  data.set({
+      id:1,
+      title:"ngay 19/11",
+      content:"demo content for note"
   })
+
+//   data.once('value').then(function(snapshot){
+//     console.log(snapshot.val());
+    
+//   })
