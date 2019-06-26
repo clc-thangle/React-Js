@@ -1,4 +1,4 @@
-import noteData from './firebaseConnect';
+import {noteData} from './firebaseConnect';
 
 var redux = require('redux');
 
@@ -8,8 +8,8 @@ const noteInitialState = {
 const allReducer = (state = noteInitialState, action) => {
     switch (action.type) {
         case "ADD_DATA":
-            console.log('ket noi thanh cong + '+ action.getItem);
-            
+            noteData.push(action.getItem);
+            console.log('them du lieu ' + JSON.stringify(action.getItem)+ "thanh cong");
             return state
         default:
             return state
