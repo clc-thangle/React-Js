@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
 import React, { Component } from 'react';
-
-function One() {
-  <div>
-     <h2> so 1 tap 1 </h2>
-     <h3> so 1 tap 2 </h3>
-     </div>
-}
+import Nav from './Nav';
+import NoteList from './NoteList';
+import NoteForm from './NoteForm';
+import {noteData} from './firebaseConnect'
 
 class App extends Component {
   render() {
+    console.log(noteData);
+    
     return (
-      <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <One/>
-      </header>
+
+      <div>
+      <Nav/>
+      <div className="container">
+        <div className="row">
+          <NoteList/>
+          <NoteForm/>
+        </div>
+      </div>
+
     </div>
     );
   }
