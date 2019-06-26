@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux';
 class NoteForm extends Component {
 
     constructor(props) {
@@ -16,16 +16,17 @@ class NoteForm extends Component {
         const value = event.target.value; 
         this.setState({
             [name]:value
-        });
+        })
     }
 
     addData  = (title,content) => {
-        var item = {};
-        item.noteTitle=title;
-        item.noteContent=content;
-        // gui item len app de app xu li
-        this.props.getData(item);
-        alert('them du lieu ' + JSON.stringify(item)+ "thanh cong");
+        // var item = {};
+        // item.noteTitle=title;
+        // item.noteContent=content;
+        // // gui item len app de app xu li
+        // this.props.getData(item);
+        // alert('them du lieu ' + JSON.stringify(item)+ "thanh cong");
+        this.props.addDataStore();// su dung reducer trong store , // dispatch ADD_DATA
     }
 
     render() {
@@ -50,4 +51,18 @@ class NoteForm extends Component {
     }
 }
 
-export default NoteForm;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        testThoi: state.testConnect
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        addDataStore: () => {
+            dispatch({type:"ADD_DATA"})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NoteForm);
