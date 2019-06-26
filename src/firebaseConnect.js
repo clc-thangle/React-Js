@@ -10,5 +10,5 @@ var firebaseConfig = {
     appId: "1:197516839263:web:ec3d2b5aba24d975"
   };
   // Initialize Firebase
-  
-  export const noteData = firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
+  export const noteData = firebase.database().ref('dataForNote');

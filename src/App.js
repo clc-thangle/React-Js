@@ -6,8 +6,21 @@ import NoteForm from './NoteForm';
 import {noteData} from './firebaseConnect'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  
+  addData  = (item) => {
+    noteData.push(item);
+  }
+
   render() {
-    console.log(noteData);
+    // noteData.once('value').then(function(snapshot){
+    //   console.log(snapshot.val());
+      
+    // });
     
     return (
 
@@ -16,7 +29,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <NoteList/>
-          <NoteForm/>
+          <NoteForm getData={(item) => this.addData(item)}/>
         </div>
       </div>
 

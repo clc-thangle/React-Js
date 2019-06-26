@@ -13,9 +13,7 @@ class NoteForm extends Component {
 
     isChange = (event) => {
         const name = event.target.name;
-        const value = event.target.value;
-        console.log(name);
-        console.log(value);    
+        const value = event.target.value; 
         this.setState({
             [name]:value
         });
@@ -23,11 +21,11 @@ class NoteForm extends Component {
 
     addData  = (title,content) => {
         var item = {};
-        item.title=title;
-        item.content=content;
+        item.noteTitle=title;
+        item.noteContent=content;
         // gui item len app de app xu li
-        console.log(item);
-        
+        this.props.getData(item);
+        alert('them du lieu ' + JSON.stringify(item)+ "thanh cong");
     }
 
     render() {
