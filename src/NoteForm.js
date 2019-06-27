@@ -59,7 +59,7 @@ class NoteForm extends Component {
     render() {
         return (
             <div className="col-4">
-                <h3>EDIT CONTENT NOTE</h3>
+                <h3>ADD OR EDIT</h3>
                 <form>
                 <div className="form-group">
                     <label htmlFor="title">Note's title</label>

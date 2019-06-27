@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import {connect} from 'react-redux';
 class Nav extends Component {
+
+    handleAdd  = (event) => {
+      event.preventDefault();//click vao khong chuyen trang
+      this.props.changeEditStatus();
+    }
+
     render() {
         return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4" style={{backgroundColor: 'black'}}>
@@ -12,7 +19,7 @@ class Nav extends Component {
         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Xem danh sach NOTE</a>
+        <a className="nav-link" href="https://www.facebook.com/" onClick={(event) => this.handleAdd(event)}>Them ghi chu</a>
       </li>
     </ul>
   </div>
@@ -23,4 +30,20 @@ class Nav extends Component {
     }
 }
 
-export default Nav;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    prop: state.prop
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    changeEditStatus: () => {
+      dispatch({
+        type:"CHANGE_EDIT_STATUS"
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
