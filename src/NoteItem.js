@@ -9,6 +9,11 @@ class NoteItem extends Component {
         
     }
 
+    deleteData  = () => {
+       this.props.getDeleteData(this.props.note.key);
+        
+    }
+
     render() {
         return (
             <div className="card">
@@ -20,7 +25,7 @@ class NoteItem extends Component {
                     </a>
                     <div className="btn-group float-right">
                         <button className="btn btn-outline-info" onClick={() => this.twoActionButton()}>Sua</button>
-                        <button className="btn btn-outline-secondary">Xoa</button>
+                        <button className="btn btn-outline-secondary" onClick={() => this.deleteData()}>Xoa</button>
                     </div>
                 </h5>
             </div>
@@ -51,6 +56,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({
               type : "GET_EDIT_DATA",
               editObject
+            })
+          },
+          getDeleteData: (deleteKey) => {
+            dispatch({
+              type : "DELETE",
+              deleteKey
             })
           }
     }
