@@ -7,18 +7,17 @@ class NoteForm extends Component {
         this.state = {
             noteTitle:'',
             noteContent:'',
-            id:''
+            key:''
         }
     }
     
     
     componentWillMount() {
-         if(this.props.editItem)
-         {// truong hop sua
+         if(this.props.editItem) {// truong hop sua
              this.setState({
-                noteTitle:this.props.editItem.noteTitle,
-                noteContent:this.props.editItem.noteContent,
-                id:this.props.editItem.id
+                 noteTitle:this.props.editItem.noteTitle,
+                 noteContent:this.props.editItem.noteContent,
+                 key:this.props.editItem.key
              });
          }
     }
@@ -33,15 +32,27 @@ class NoteForm extends Component {
     }
 
     addData  = (title,content) => {
-        var item = {};
-        item.noteTitle=title;
-        item.noteContent=content;
-        // // gui item len app de app xu li
-        // this.props.getData(item);
-        // alert('them du lieu ' + JSON.stringify(item)+ "thanh cong");
+        if(this.state.key)
+        {
+            var editObject ={};
+            editObject.key=this.state.key;
+            editObject.noteContent=this.state.noteContent;
+            editObject.noteTitle=this.state.noteTitle
+            this.props.editDataStore(editObject);
+            console.log("dang sua du lieu");
+        }
+        else {
+            var item = {};
+            item.noteTitle=title;
+            item.noteContent=content;
+            // // gui item len app de app xu li
+            // this.props.getData(item);
+            // alert('them du lieu ' + JSON.stringify(item)+ "thanh cong");
+    
+            // item = JSON.stringify(item);
+            this.props.addDataStore(item);// su dung reducer trong store , // dispatch ADD_DATA
+        }
 
-        // item = JSON.stringify(item);
-        this.props.addDataStore(item);// su dung reducer trong store , // dispatch ADD_DATA
         
     }
 
@@ -52,15 +63,15 @@ class NoteForm extends Component {
                 <form>
                 <div className="form-group">
                     <label htmlFor="title">Note's title</label>
-                    <input defaultValue={this.props.editItem.noteTitle} type="text" onChange={(event)=> this.isChange(event)} className="form-control" name="title" id="title" aria-describedby="helpIdTitle"  />
+                    <input defaultValue={this.props.editItem.noteTitle} type="text" onChange={(event)=> this.isChange(event)} className="form-control" name="noteTitle" id="noteTitle" aria-describedby="helpIdTitle"  />
                     <small id="helpIdTitle" className="form-text text-muted">Điền tiêu đề dô đaiz</small>
                 </div>
                 <div className="form-group">
                     <label htmlFor="content">Note's content</label>
-                    <textarea defaultValue={this.props.editItem.noteContent} onChange={(event)=> this.isChange(event)} type="text" className="form-control" name="content" id="content" aria-describedby="helpIdContent"/>
+                    <textarea defaultValue={this.props.editItem.noteContent} onChange={(event)=> this.isChange(event)} type="text" className="form-control" name="noteContent" id="noteContent" aria-describedby="helpIdContent"/>
                     <small id="helpIdContent" className="form-text text-muted">Điền nội dung dô đaiz nữa nè </small>
                 </div>
-                <button type="reset" onClick={() => this.addData(this.state.title, this.state.content)}  className="btn btn-primary btn-block">Lưu</button></form>
+                <button type="reset" onClick={() => this.addData(this.state.noteTitle, this.state.noteContent)}  className="btn btn-primary btn-block">Lưu</button></form>
     
             </div>
         );
@@ -77,6 +88,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addDataStore: (getItem) => {
             dispatch({type:"ADD_DATA",getItem})
+        },
+        editDataStore: (getItem) => {
+            dispatch({type:"EDIT",getItem})
         }
     }
 }
