@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 class NoteItem extends Component {
+
+    twoActionButton  = () => {
+        this.props.changeEditStatus();
+        // ham lay noi dung truyen trong store , de store du lieu -- action2
+        console.log(this.props.note);
+        
+    }
+
     render() {
         return (
             <div className="card">
@@ -11,7 +19,7 @@ class NoteItem extends Component {
                         {this.props.noteTitle}
                     </a>
                     <div className="btn-group float-right">
-                        <button className="btn btn-outline-info" onClick={() => this.props.changeEditStatus()}>Sua</button>
+                        <button className="btn btn-outline-info" onClick={() => this.twoActionButton()}>Sua</button>
                         <button className="btn btn-outline-secondary">Xoa</button>
                     </div>
                 </h5>

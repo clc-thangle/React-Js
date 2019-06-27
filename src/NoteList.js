@@ -41,6 +41,7 @@ constructor(props) {
                     <NoteItem
                     key = {key}
                     noteTitle={value.noteTitle}
+                    note = {value}
                     noteContent={value.noteContent}
                     i={key}
                     />
