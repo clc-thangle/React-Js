@@ -5,7 +5,8 @@ var redux = require('redux');
 const noteInitialState = {
     isEdit : false,
     editItem : {},
-    isAdd : false
+    isAdd : false,
+    AlertShow : false
 }
 const allReducer = (state = noteInitialState, action) => {
     switch (action.type) {
@@ -18,6 +19,11 @@ const allReducer = (state = noteInitialState, action) => {
 
         case "CHANGE_ADD_STATUS":
             return {...state,isAdd:!state.isAdd}
+
+        case "ALERT_ON":
+            return {...state,AlertShow:true} 
+        case "ALERT_OFF":
+            return {...state,AlertShow:false} 
 
         case "GET_EDIT_DATA":
             return {...state,editItem:action.editObject}
