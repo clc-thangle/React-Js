@@ -20,7 +20,12 @@ const allReducer = (state = noteInitialState, action) => {
 
         case "EDIT":
             //update du lieu len firebase
-            console.log("du lieu can sua ma store da nhan duoc la" + JSON.stringify(action.getItem));
+            noteData.child(action.getItem.key).update({
+                noteTitle : action.getItem.noteTitle,
+                noteContent : action.getItem.noteContent
+            })
+           alert('da cap nhap du lieu' + JSON.stringify(action.getItem) + 'thanh cong');
+
             return {...state,editItemL:{}}
 
         default:
