@@ -3,7 +3,7 @@ import {noteData} from './firebaseConnect';
 var redux = require('redux');
 
 const noteInitialState = {
-    testConnect: 'testThoi'
+    isEdit : false
 }
 const allReducer = (state = noteInitialState, action) => {
     switch (action.type) {
@@ -11,6 +11,11 @@ const allReducer = (state = noteInitialState, action) => {
             noteData.push(action.getItem);
             console.log('them du lieu ' + JSON.stringify(action.getItem)+ "thanh cong");
             return state
+
+        case "CHANGE_EDIT_STATUS":
+           
+            return {...state,isEdit:!state.isEdit}
+
         default:
             return state
     }
