@@ -5,7 +5,7 @@ class NoteItem extends Component {
     twoActionButton  = () => {
         this.props.changeEditStatus();
         // ham lay noi dung truyen trong store , de store du lieu -- action2
-        console.log(this.props.note);
+        this.props.getEditData(this.props.note);
         
     }
 
@@ -45,6 +45,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         changeEditStatus: () => {
             dispatch({
               type : "CHANGE_EDIT_STATUS"
+            })
+        },
+        getEditData: (editObject) => {
+            dispatch({
+              type : "GET_EDIT_DATA",
+              editObject
             })
           }
     }
