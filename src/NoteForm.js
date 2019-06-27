@@ -40,7 +40,7 @@ class NoteForm extends Component {
             editObject.noteTitle=this.state.noteTitle
             this.props.editDataStore(editObject);
             this.props.changeEditStatus();//tat form
-            this.props.alertOn();
+            this.props.alertOn("Sua thanh cong","success");
         }
         else {
             var item = {};
@@ -52,7 +52,7 @@ class NoteForm extends Component {
     
             // item = JSON.stringify(item);
             this.props.addDataStore(item);// su dung reducer trong store , // dispatch ADD_DATA
-            this.props.alertOn();
+            this.props.alertOn("Them moi thanh cong","success");
         }
 
         
@@ -111,9 +111,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
               type : "CHANGE_EDIT_STATUS"
             })
         },
-        alertOn: () => {
+        alertOn: (alertContent,alertType) => {
             dispatch({
-              type : "ALERT_ON"
+              type : "ALERT_ON", alertContent,alertType
             })
         },
         alertOff: () => {
